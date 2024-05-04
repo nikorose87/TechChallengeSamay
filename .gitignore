@@ -1,0 +1,6 @@
+./Notebooks/SamayColab/inputdata/
+./dataset/
+*.pyc
+__pycache__/
+venv/
+*.env
