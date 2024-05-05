@@ -1,0 +1,60 @@
+digraph SNN {
+    rankdir=LR;
+    node [shape=circle];
+    // Input layer
+    subgraph cluster_0 {
+        color=white;
+        node [style=filled, color=lightgrey];
+        label = "Input Layer";
+        WavIn1; WavIn2; WavIn3; WavIn4; WavIn_n; // Assuming 5 input features for visualization
+    }
+    // Hidden Layer 1
+    subgraph cluster_1 {
+        color=white;
+        node [style=filled, color=lightblue];
+        label = "Hidden Layer 1";
+        H11; H12; H13; H14; H15; H16; H17; H18; H19; H110; // Assuming 10 neurons for visualization
+    }
+    // Hidden Layer 2
+    subgraph cluster_2 {
+        color=white;
+        node [style=filled, color=lightblue];
+        label = "Hidden Layer 2";
+        H21; H22; H23; H24; H25; H26; H27; H28; H29; H210; // Assuming 10 neurons for visualization
+    }
+    // Output Layer
+    subgraph cluster_3 {
+        color=white;
+        node [style=filled, color=lightcoral];
+        label = "Output Layer";
+        Asthma; HeartFailure; COPD; // Assuming 3 output classes for visualization
+    }
+    // Connections Input Layer to Hidden Layer 1
+    WavIn1 -> {H11 H12 H13 H14 H15 H16 H17 H18 H19 H110};
+    WavIn2 -> {H11 H12 H13 H14 H15 H16 H17 H18 H19 H110};
+    WavIn3 -> {H11 H12 H13 H14 H15 H16 H17 H18 H19 H110};
+    WavIn4 -> {H11 H12 H13 H14 H15 H16 H17 H18 H19 H110};
+    WavIn_n -> {H11 H12 H13 H14 H15 H16 H17 H18 H19 H110};
+    // Connections Hidden Layer 1 to Hidden Layer 2
+    H11 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H12 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H13 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H14 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H15 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H16 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H17 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H18 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H19 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    H110 -> {H21 H22 H23 H24 H25 H26 H27 H28 H29 H210};
+    // Connections Hidden Layer 2 to Output Layer
+    H21 -> {Asthma HeartFailure COPD};
+    H22 -> {Asthma HeartFailure COPD};
+    H23 -> {Asthma HeartFailure COPD};
+    H24 -> {Asthma HeartFailure COPD};
+    H25 -> {Asthma HeartFailure COPD};
+    H26 -> {Asthma HeartFailure COPD};
+    H27 -> {Asthma HeartFailure COPD};
+    H28 -> {Asthma HeartFailure COPD};
+    H29 -> {Asthma HeartFailure COPD};
+    H210 -> {Asthma HeartFailure COPD};
+}
